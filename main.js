@@ -1,10 +1,22 @@
-var context=new AudioContext();
+const pianoKeys=document.querySelectorAll(".key")
+pianoKeys.forEach(key=>
+    key.addEventListener("click",function(){
+        const musicNote=document.getElementById(key.dataset.notes)
+        musicNote.currentTime=0
+        musicNote.play()
+
+    })
+    )
+
+
+
+// var context=new AudioContext();
 //   var o=null;
 //   var g=null;
 
-const music=document.getElementById("key")
-music.addEventListener("click",function playNote(frequency, type) {
-    console.log("hdhdsdsjdkjs")
+// const music=document.getElementById("key")
+// music.addEventListener("click",function playNote(frequency, type) {
+//     console.log("hdhdsdsjdkjs")
     // setTimeout(function(){
     //   o = context.createOscillator();
     //     g = context.createGain();
@@ -16,4 +28,4 @@ music.addEventListener("click",function playNote(frequency, type) {
     //     g.gain.exponentialRampToValueAtTime(0.00001, context.currentTime + 1);
     // },1000)
       
-  })
+//   })
